@@ -1,47 +1,50 @@
 # TFM_LUAD
 
-## Comparative evaluation of RNA-seq, methylation, proteomics and phosphoproteomics for prognosis prediction in lung adenocarcinoma
+## Comparative evaluation of transcriptomics, DNA methylation, proteomics and phosphoproteomics for prognosis prediction in lung adenocarcinoma
 
 ### Project description
 
-This project evaluates the prognostic value of four molecular modalities available in LinkedOmicsKB:
+This repository contains the R scripts developed for the Master's Thesis entitled:
 
-- RNA sequencing (RNA-seq)
-- DNA methylation
-- Proteomics
-- Phosphoproteomics
+**"Comparative evaluation of transcriptomics, DNA methylation, proteomics and phosphoproteomics for prognosis prediction in lung adenocarcinoma."**
 
-The objective is to compare the predictive performance of each modality independently using survival analysis and machine learning approaches.
+The study compares the prognostic performance of four molecular modalities from the LinkedOmicsKB LUAD cohort using survival analysis and machine learning approaches.
 
 ---
 
 ## Data source
 
-Data were obtained from LinkedOmicsKB for the LUAD (Lung Adenocarcinoma) cohort.
+Data were obtained from **LinkedOmicsKB** for the LUAD (Lung Adenocarcinoma) cohort.
 
-Available modalities:
-
-| Modality | Patients | Variables |
-|-----------|-----------|-----------|
+| Molecular modality | Patients | Variables |
+|-------------------|---------:|----------:|
 | Survival | 110 | 5 |
-| RNA-seq | 110 | 60,669 |
-| Methylation | 105 | 13,178 |
+| Transcriptomics (RNA-seq) | 110 | 60,669 |
+| DNA methylation | 105 | 13,178 |
 | Proteomics | 110 | 12,433 |
 | Phosphoproteomics | 110 | 61,705 |
 
-After harmonization of patient identifiers and integration across modalities, a final cohort of 105 patients was obtained.
+After harmonization of patient identifiers across all molecular layers, a final integrated cohort of **105 patients** was obtained.
 
 ---
 
-## Current workflow
+## Analytical workflow
 
-- [x] Data acquisition
-- [x] Patient identifier harmonization
-- [x] Cohort construction
-- [ ] Feature filtering
-- [ ] Survival modeling
-- [ ] Model validation
-- [ ] Comparative evaluation
+✔ Cohort construction
+
+✔ Multi-omics integration
+
+✔ Data preprocessing
+
+✔ Feature selection using Cox and LASSO
+
+✔ Prognostic model development
+
+✔ Repeated nested cross-validation
+
+✔ Comparative evaluation of molecular modalities
+
+✔ Biomarker prioritization
 
 ---
 
@@ -50,17 +53,42 @@ After harmonization of patient identifiers and integration across modalities, a 
 ```text
 TFM_LUAD/
 │
-├── scripts/
-│   └── 01_construccion_cohorte.R
-│
 ├── README.md
-└── .gitignore
+│
+├── scripts/
+├── 01_construccion_cohorte.R
+├── 02_cohorte_comun.R
+├── 03_procesamiento_matrices_omicas.R
+├── 04_modelado.R
+├── 05_evaluacion_aparente.R
+├── 06_validacion_cruzada.R
+├── 07_comparacion_modalidades.R
+├── 08_biomarcadores.R
+└── 09_anotacion_biomarcadores.R
+
+
 ```
+
+---
+
+## Software
+
+- R 4.5.1
+- RStudio
+- Survival
+- glmnet
+- survminer
+- randomForestSRC
+- dplyr
+- tidyr
+- ggplot2
 
 ---
 
 ## Author
 
-Milena Vera García
+**Milena Vera García**
 
+Master's Thesis  
+Master's Degree in Bioinformatics
 Master's Degree in Bioinformatics
